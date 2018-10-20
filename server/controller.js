@@ -28,7 +28,17 @@ module.exports = {
     },
 
     deleteHouse: (req, res) => {
-        res.status(200).send("Delete House Endpoint Worked");
+        // res.status(200).send("Delete House Endpoint Worked");
+        const dbInstance = req.app.get("db");
+
+        const { id } = req.params;
+        
+        dbInstance.delete_house( id ).then( house => {
+            res.status(200).json()
+        }).catch(error => { 
+            res.status(500).send({errorMessage: "Something went wrong in CREATE HOUSE"});
+        console.log("ERROR------->", error);
+        })
     }
 
 }

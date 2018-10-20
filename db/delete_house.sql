@@ -1,1 +1,1 @@
-delete from product where id = $1;
+delete from house where id = $1;

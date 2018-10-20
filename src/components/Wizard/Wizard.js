@@ -31,6 +31,12 @@ export default class Wizard extends Component {
         this.setState({zip: val})
     }
 
+    // handleInput = (e) => {
+    //     const name = e.target.name;
+    //     const value = e.target.value;
+    //     this.setState({[name]: value})
+    // }
+
     createHouse() {
         axios.post( '/api/houses', {house: this.state} ).then()
     }
